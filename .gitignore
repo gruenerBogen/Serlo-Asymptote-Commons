@@ -1,0 +1,16 @@
+# Ignore backup files
+*~
+
+# Ignore Asymptote log files
+*.log
+
+# Ignore Asymptote output files
+*.gif
+*.svg
+*.pdf
+*.eps
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
