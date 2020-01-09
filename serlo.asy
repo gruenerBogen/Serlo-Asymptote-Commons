@@ -26,3 +26,8 @@ void draw_vector(path vect, pen p = currentpen) {
   }
   draw(b -- e, arrow=vect_arrow, p);
 }
+
+// We do a lot of maths so including the maths packages here will save
+// typing work later.
+usepackage("amsmath");
+usepackage("amssymb");
