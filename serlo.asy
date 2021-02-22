@@ -31,3 +31,18 @@ void draw_vector(path vect, pen p = currentpen) {
 // typing work later.
 usepackage("amsmath");
 usepackage("amssymb");
+
+// This stuff is also inside the Wikibooks TeX header and seems useful
+// https://www.mediawiki.org/wiki/Extension:Math/TeX-header
+usepackage("amsfonts");
+
+// This definition of the Wikibooks TeX header might conflict with the hyperref
+// package, when used in conjuction.
+texpreamble("\newcommand{\C}{\mathbb{C}}");
+
+// These are non-porblematic definitions from the Wikibooks TeX header.
+texpreamble("\newcommand{\R}{\mathbb{R}}");
+texpreamble("\newcommand{\Z}{\mathbb{Z}}");
+texpreamble("\newcommand{\N}{\mathbb{N}}");
+texpreamble("\newcommand{\Q}{\mathbb{Q}}");
+
