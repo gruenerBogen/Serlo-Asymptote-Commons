@@ -1,5 +1,7 @@
 // Serlo coporate identity colours
 pen serlo_blue = rgb("007ec1");
+pen serlo_green = rgb("95bc1a");
+pen serlo_gray = rgb("404040");
 
 // TODO make pen for Serlo fons
 
