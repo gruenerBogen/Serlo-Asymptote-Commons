@@ -29,6 +29,44 @@ void draw_vector(path vect, pen p = currentpen) {
   draw(b -- e, arrow=vect_arrow, p);
 }
 
+void draw_coordinates(int x_dimen, int y_dimen, bool draw_scale = false,
+		      bool draw_labels = false, real unit_size = 1) {
+  // Draw axes
+  draw((-(x_dimen+0.5)*unit_size,0) --((x_dimen+0.5)*unit_size,0),
+       arrow=Arrow(TeXHead));
+  draw((0,-(y_dimen+0.5)*unit_size) -- (0, (y_dimen+0.5)*unit_size),
+       arrow=Arrow(TeXHead));
+  if(draw_scale) {
+    for(int i=-x_dimen; i <=x_dimen; ++i) {
+      if(i == 0) {
+	continue;
+      }
+      draw((i*unit_size,-.1)--(i*unit_size,.1), linewidth(.3));
+    }
+    for(int i=-y_dimen; i <=y_dimen; ++i) {
+      if(i == 0) {
+	continue;
+      }
+      draw((-.1,i*unit_size)--(.1, i*unit_size), linewidth(.3));
+    }
+  }
+
+  if(draw_labels) {
+    for(int i=-x_dimen; i <=x_dimen; ++i) {
+      if(i == 0) {
+	continue;
+      }
+      label("$" + ((string) i) + "$", (i*unit_size,-.1), S);
+    }
+    for(int i = -y_dimen; i <= y_dimen; ++i) {
+      if(i == 0) {
+	continue;
+      }
+      label("$" + ((string) i) + "$", (-.1,i*unit_size), W);
+    }
+  }
+}
+
 // We do a lot of maths so including the maths packages here will save
 // typing work later.
 usepackage("amsmath");
