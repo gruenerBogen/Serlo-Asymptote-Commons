@@ -67,6 +67,22 @@ void draw_coordinates(int x_dimen, int y_dimen, bool draw_scale = false,
   }
 }
 
+/**
+ * Give the argument of a complex number as a value either between -pi and pi
+ * (the latter included) or between 0 and 2*pi (the former included) - depending
+ * on the value of allow_negative_angle.
+ */
+real cplx_arg(pair z, bool allow_negative_angle = true) {
+  if(z == (0,0)) {
+    return 0;
+  }
+  real argument = atan2(z.y, z.x);
+  if(allow_negative_angle || argument > 0) {
+    return argument;
+  }
+  return 2*pi+argument;
+}
+
 // We do a lot of maths so including the maths packages here will save
 // typing work later.
 usepackage("amsmath");
@@ -85,4 +101,3 @@ texpreamble("\newcommand{\R}{\mathbb{R}}");
 texpreamble("\newcommand{\Z}{\mathbb{Z}}");
 texpreamble("\newcommand{\N}{\mathbb{N}}");
 texpreamble("\newcommand{\Q}{\mathbb{Q}}");
-
