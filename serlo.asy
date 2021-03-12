@@ -41,13 +41,13 @@ void draw_coordinates(int x_dimen, int y_dimen, bool draw_scale = false,
       if(i == 0) {
 	continue;
       }
-      draw((i*unit_size,-.1)--(i*unit_size,.1), linewidth(.3));
+      draw((i*unit_size,-.06)--(i*unit_size,.06), linewidth(.3));
     }
     for(int i=-y_dimen; i <=y_dimen; ++i) {
       if(i == 0) {
 	continue;
       }
-      draw((-.1,i*unit_size)--(.1, i*unit_size), linewidth(.3));
+      draw((-.06,i*unit_size)--(.06, i*unit_size), linewidth(.3));
     }
   }
 
@@ -56,13 +56,13 @@ void draw_coordinates(int x_dimen, int y_dimen, bool draw_scale = false,
       if(i == 0) {
 	continue;
       }
-      label("$" + ((string) i) + "$", (i*unit_size,-.1), S);
+      label("$" + ((string) i) + "$", (i*unit_size,-.06), S);
     }
     for(int i = -y_dimen; i <= y_dimen; ++i) {
       if(i == 0) {
 	continue;
       }
-      label("$" + ((string) i) + "$", (-.1,i*unit_size), W);
+      label("$" + ((string) i) + "$", (-.06,i*unit_size), W);
     }
   }
 }
