@@ -30,7 +30,8 @@ void draw_vector(path vect, pen p = currentpen) {
 }
 
 void draw_coordinates(int x_dimen, int y_dimen, bool draw_scale = false,
-		      bool draw_labels = false, real unit_size = 1) {
+		      bool draw_labels = false, real unit_size = 1,
+		      int[] x_labels = {}, int[] y_labels = {}) {
   // Draw axes
   draw((-(x_dimen+0.5)*unit_size,0) --((x_dimen+0.5)*unit_size,0),
        arrow=Arrow(TeXHead));
@@ -63,6 +64,13 @@ void draw_coordinates(int x_dimen, int y_dimen, bool draw_scale = false,
 	continue;
       }
       label("$" + ((string) i) + "$", (-.06,i*unit_size), W);
+    }
+  } else {
+    for(int i = 0; i < x_labels.length; ++i) {
+      label("$" + ((string) x_labels[i]) + "$", (x_labels[i]*unit_size,-.06), S);
+    }
+    for(int i = 0; i < y_labels.length; ++i) {
+      label("$" + ((string) y_labels[i]) + "$", (-.06,y_labels[i]*unit_size), W);
     }
   }
 }
