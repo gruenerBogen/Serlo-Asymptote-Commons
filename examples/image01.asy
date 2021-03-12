@@ -3,7 +3,7 @@ defaultpen(fontsize(10pt)+linecap(0)+linejoin(0));
 // label("Hello World!")
 unitsize(1cm);
 
-import serlo;
+import "../serlo.asy" as serlo;
 
 path cropped_line(real slope, real start_x, real end_x, pair intersection_pt = (0,0)) {
   real t = intersection_pt.y - slope*intersection_pt.x;
