@@ -1,7 +1,13 @@
-// Serlo coporate identity colours
+// Serlo coporate identity colours from
+// https://elbotho.github.io/serlo-design-helper/
 pen serlo_blue = rgb("007ec1");
-pen serlo_green = rgb("95bc1a");
 pen serlo_gray = rgb("404040");
+// Serlo image guideline colours from https://de.serlo.org/90412#SerloFarben
+pen serlo_green = rgb("006400");
+pen serlo_orange = rgb("ff6600");
+pen serlo_red = rgb("cc0000");
+pen serlo_purple = rgb("660099");
+pen serlo_turquoise = rgb("009999");
 
 // TODO make pen for Serlo fons
 
